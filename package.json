@@ -1,0 +1,19 @@
+{
+  "name": "texter",
+  "version": "1.0.0",
+  "description": "Open source texting app",
+  "main": "texter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnanm20/Texter.git"
+  },
+  "author": "Adnan Maleskic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnanm20/Texter/issues"
+  },
+  "homepage": "https://github.com/adnanm20/Texter#readme"
+}
