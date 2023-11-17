@@ -1,0 +1,6 @@
+{
+	"signup" : {
+		"get_id_by_username_or_email" : "SELECT id FROM users WHERE username = ? OR email = ?",
+		"insert_new_user" : "INSERT INTO users (username, salt, password_hash) VALUES (?, ?, ?)"
+	}
+}

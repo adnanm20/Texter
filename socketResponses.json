@@ -1,0 +1,6 @@
+{
+	"signup" : {
+		"success" : "signupsuccess",
+		"fail" : "signupfail"
+	}
+}

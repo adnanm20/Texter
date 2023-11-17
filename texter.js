@@ -7,7 +7,7 @@ const io = new Server(server);
 
 const path = require('path');
 const bodyParser = require('body-parser');
-// const dbConnection = require("./dbConnection");
+const dbConnection = require("./dbConnection");
 
 const eventsLoader = require("./eventsLoader");
 
