@@ -1,8 +1,8 @@
 const crypto = require("crypto");
 const random = require("../random");
-const dbConnection = require("../dbConnection");
-const socketResponses = require("../socketResponses.json").signup;
-const dbQueries = require("../dbQueries.json").signup
+const dbConnection = require("../utilities/dbConnection");
+const socketResponses = require("../utilities/socketResponses.json").signup;
+const dbQueries = require("../utilities/dbQueries.json").signup
 
 exports.eventName = "signup"
 
