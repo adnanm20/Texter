@@ -1,6 +1,13 @@
 {
 	"signup" : {
-		"get_id_by_username_or_email" : "SELECT id FROM users WHERE username = ? OR email = ?",
+		"user_id_by_username_or_email" : "SELECT id FROM users WHERE username = ? OR email = ?",
 		"insert_new_user" : "INSERT INTO users (username, salt, password_hash) VALUES (?, ?, ?)"
+	},
+	"login" : {
+		"user_uid_salt_pass_by_username_or_email" : "SELECT id, salt, password_hash FROM users WHERE username = ? OR email = ?",
+		"new_session_uid_cookie_days" : "INSERT INTO sessions (user_id, cookie, expire_timestamp) VALUES (?, ?, timestampadd(day, ?, current_timestamp()))"
+	},
+	"autoLogin" : {
+		"username_by_cookie" : "SELECT users.username FROM sessions JOIN users ON sessions.user_id = users.id WHERE sessions.cookie = ?"
 	}
 }

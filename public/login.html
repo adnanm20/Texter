@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="./login.css">
+</head>
+<body>
+	<form id="form" onsubmit="login(event);">
+		<div>
+			<input type="text" id="username" name="username" autocapitalize="off"
+				autocomplete="off" placeholder="Username/E-Mail"><br>
+		</div>
+		<div id="passwordwrap">
+			<input type="password" id="password" name="password"
+				placeholder="Password"><br>
+		</div>
+		<div class="submit">
+			<input type="submit" class="submitbtn" value="Sign up">
+		</div>
+	</form>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./login.js"></script>
+</body>
+</html>

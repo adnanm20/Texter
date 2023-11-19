@@ -29,9 +29,8 @@ CREATE TABLE users_channels (
 -- permissions -> example 000...0001{32bits} means can read messages
 
 CREATE TABLE sessions (
-	id SERIAL,
 	user_id bigint unsigned NOT NULL,
-	session_id bigint unsigned NOT NULL,
+	cookie varchar(255) NOT NULL,
 	expire_timestamp timestamp NOT NULL
 );
 

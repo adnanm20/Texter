@@ -2,5 +2,13 @@
 	"signup" : {
 		"success" : "signupsuccess",
 		"fail" : "signupfail"
+	},
+	"login" : {
+		"success" : "loginsuccess",
+		"fail" : "loginfail"
+	},
+	"autoLogin" : {
+		"success" : "autologinsuccess",
+		"fail" : "autologinfail"
 	}
 }
