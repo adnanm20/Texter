@@ -3,10 +3,9 @@ var socket = io()
 function login(formEvent) {
 	formEvent.preventDefault();
 
-	var email = document.getElementById("email").value;
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
-	socket.emit("signup", {email: email, username: username, password: password});
+	socket.emit("signup", {username: username, password: password});
 	return;
 }
 
