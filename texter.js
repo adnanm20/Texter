@@ -41,7 +41,7 @@ eventsLoader.load(__dirname + "/events")
 		})
 	});
 
-const port = 3000;
+const port = require("./server_env.json").port;
 server.listen(port, () => {
 	console.log("listening on port: " + port.toString());
 });
