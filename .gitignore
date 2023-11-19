@@ -3,3 +3,4 @@ package-lock.json
 notes.txt
 testing/
 dbAuth.json
+server_env.json
