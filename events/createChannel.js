@@ -14,7 +14,7 @@ exports.go = async function (data, io, socketid) {
 		dbConnection.query(dbQueries.create_channel_by_name, [data.channelName], _callback); // should check name maybe
 
 		function _callback(err, result) {
-			if (err) { console.log(err); logger.log(err); return; }
+			if (err) { logger.log(err); return; }
 
 			validMembers.forEach(member => {
 				dbConnection.query(dbQueries.create_user_channel_relation_uid_chid, [member.id, result.insertId], (err) => {if(err) {logger.log(err); return; } });
