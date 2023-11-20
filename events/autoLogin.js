@@ -1,6 +1,7 @@
 const dbConnection = require("../utilities/dbConnection");
 const dbQueries = require("../utilities/dbQueries.json").autoLogin;
 const socketResponses = require("../utilities/socketResponses.json").autoLogin;
+let logger = require("../utilities/logger");
 
 exports.eventName = "autologin";
 

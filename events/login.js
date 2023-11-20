@@ -3,7 +3,7 @@ let dbConnection = require("../utilities/dbConnection");
 let random = require("../utilities/random");
 const socketResponses = require("../utilities/socketResponses.json").login;
 const dbQueries = require("../utilities/dbQueries.json").login
-// let logger = require("../logger");
+let logger = require("../utilities/logger");
 
 exports.eventName = "login";
 

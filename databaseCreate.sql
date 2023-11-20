@@ -12,8 +12,7 @@ CREATE TABLE users (
 CREATE TABLE channels (
 	id SERIAL,
 	channel_name varchar(255),
-	channel_type int NOT NULL default 0,
-	last_message_id bigint unsigned
+	last_message_id bigint unsigned default 0
 );
 -- channel_type -> 0 normal 2 people chat / 1 group / 2 public chat maybe  (not sure if necessary)
 
@@ -21,9 +20,9 @@ CREATE TABLE users_channels (
 	id SERIAL,
 	user_id bigint unsigned NOT NULL,
 	channel_id bigint unsigned NOT NULL,
-	join_timestamp timestamp NOT NULL,
+	join_timestamp timestamp NOT NULL default(current_timestamp),
 	wantedness int NOT NULL default 0,
-	permissions int unsigned NOT NULL
+	permissions int unsigned NOT NULL default 0
 );
 -- wantedness -> 0 request / 1 general / 2 primary
 -- permissions -> example 000...0001{32bits} means can read messages

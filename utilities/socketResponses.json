@@ -10,5 +10,9 @@
 	"autoLogin" : {
 		"success" : "autologinsuccess",
 		"fail" : "autologinfail"
+	},
+	"createChannel" : {
+		"success" : "createChannelsuccess",
+		"fail" : "createChannelfail"
 	}
 }

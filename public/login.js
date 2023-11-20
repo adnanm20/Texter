@@ -1,30 +1,30 @@
-var socket = io()
+let socket = io()
 
-var user_cookie = localStorage.getItem("user_cookie");
+let user_cookie = localStorage.getItem("user_cookie");
 if (user_cookie) {
-	socket.emit("autologin", {cookie: user_cookie});
+	socket.emit("autologin", { cookie: user_cookie });
 }
 
 function login(formEvent) {
 	formEvent.preventDefault();
 
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
-	socket.emit("login", {username: username, password: password});
+	let username = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
+	socket.emit("login", { username: username, password: password });
 	return;
 }
 
 socket.on("autologinsuccess", (data) => {
-	console.log(data);
+	window.location = "/";
 });
 
 socket.on("loginsuccess", (data) => {
 	localStorage.setItem("user_cookie", data.user_cookie);
-	console.log("login successful");
+	window.location = "/";
 });
 
 socket.on("loginfail", (data) => {
-	switch(data.reason) {
+	switch (data.reason) {
 		case "wrongpw":
 			console.log("Wrong password");
 			break;

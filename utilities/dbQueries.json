@@ -9,5 +9,9 @@
 	},
 	"autoLogin" : {
 		"username_by_cookie" : "SELECT users.username FROM sessions JOIN users ON sessions.user_id = users.id WHERE sessions.cookie = ?"
+	},
+	"createChannel" : {
+		"create_channel_by_name" : "INSERT INTO channels (channel_name) VALUES (?)",
+		"create_user_channel_relation_uid_chid" : "INSERT INTO users_channels (user_id, channel_id) VALUES (?, ?)"
 	}
 }
