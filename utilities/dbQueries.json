@@ -8,7 +8,7 @@
 		"new_session_uid_cookie_days" : "INSERT INTO sessions (user_id, cookie, expire_timestamp) VALUES (?, ?, timestampadd(day, ?, current_timestamp()))"
 	},
 	"autoLogin" : {
-		"username_by_cookie" : "SELECT users.username FROM sessions JOIN users ON sessions.user_id = users.id WHERE sessions.cookie = ?"
+		"id_username_by_cookie" : "SELECT id, users.username FROM sessions JOIN users ON sessions.user_id = users.id WHERE sessions.cookie = ?"
 	},
 	"createChannel" : {
 		"create_channel_by_name" : "INSERT INTO channels (channel_name) VALUES (?)",

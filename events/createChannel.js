@@ -2,6 +2,7 @@ let dbConnection = require("../utilities/dbConnection");
 let dbQueries = require("../utilities/dbQueries.json").createChannel;
 let socketResponses = require("../utilities/socketResponses.json").createChannel;
 let logger = require("../utilities/logger");
+let onlineUsers = require("../utilities/onlineUsers");
 
 exports.eventName = "createChannel";
 
@@ -18,11 +19,15 @@ exports.go = async function (data, io, socketid) {
 
 			validMembers.forEach(member => {
 				dbConnection.query(dbQueries.create_user_channel_relation_uid_chid, [member.id, result.insertId], (err) => {if(err) {logger.log(err); return; } });
+				let socketIds = onlineUsers.getSocketIds(member.id);
+				socketIds.forEach(id => {
+					io.to(id).emit(socketResponses.addedToChannel, {channelName: data.channelName, members: validMembers});
+				});
 			});
 			io.to(socketid).emit(socketResponses.success, {usersAdded : validMembers});
 		}
 
-	}).catch(logger.log("how tf?????????"));
+	}).catch(() => logger.log("how tf?????????"));
 }
 
 function getValidUsernames(members) {

@@ -27,5 +27,9 @@ socket.on("createChannelsuccess", (data) => {
 	console.log(data);
 });
 socket.on("createChannelfail", (data) => {
-	console.log(data.reason);
-})
+	console.error(data.reason);
+});
+
+socket.on("addedToChannel", (data) => {
+	console.log(data);
+});

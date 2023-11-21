@@ -13,6 +13,7 @@
 	},
 	"createChannel" : {
 		"success" : "createChannelsuccess",
-		"fail" : "createChannelfail"
+		"fail" : "createChannelfail",
+		"addedToChannel" : "addedToChannel"
 	}
 }
