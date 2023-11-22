@@ -1,0 +1,1 @@
+make-testing-of-events finish_chat_adding_clientside message_sending signup_input_validation disconnecting logout mail_verification forgot_password google_login_signup session_expiration rate_limiter permission_checker adding_removing_user_from_chat message_deletion mailer feature_voting pinned_messages file_messages image_sending profiles emojis 
